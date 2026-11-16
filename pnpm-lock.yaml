@@ -2486,6 +2486,9 @@ importers:
 
   packages/ai-code-mode:
     dependencies:
+      '@tanstack/ai-isolate':
+        specifier: workspace:^
+        version: link:../ai-isolate
       sucrase:
         specifier: ^3.35.0
         version: 3.35.1
@@ -2944,11 +2947,17 @@ importers:
         specifier: ^4.2.0
         version: 4.2.1
 
+  packages/ai-isolate:
+    devDependencies:
+      '@tanstack/ai':
+        specifier: workspace:*
+        version: link:../ai
+
   packages/ai-isolate-cloudflare:
     dependencies:
-      '@tanstack/ai-code-mode':
+      '@tanstack/ai-isolate':
         specifier: workspace:^
-        version: link:../ai-code-mode
+        version: link:../ai-isolate
     devDependencies:
       '@cloudflare/workers-types':
         specifier: ^4.20260317.1
@@ -2965,9 +2974,9 @@ importers:
       '@daytona/sdk':
         specifier: ^0.192.0
         version: 0.192.0(ws@8.21.0)
-      '@tanstack/ai-code-mode':
+      '@tanstack/ai-isolate':
         specifier: workspace:*
-        version: link:../ai-code-mode
+        version: link:../ai-isolate
       '@vitest/coverage-v8':
         specifier: 4.1.10
         version: 4.1.10(vitest@4.1.11)
@@ -2980,6 +2989,9 @@ importers:
       '@tanstack/ai-code-mode':
         specifier: workspace:*
         version: link:../ai-code-mode
+      '@tanstack/ai-isolate':
+        specifier: workspace:*
+        version: link:../ai-isolate
       '@vitest/coverage-v8':
         specifier: 4.1.10
         version: 4.1.10(vitest@4.1.11)
@@ -2992,9 +3004,9 @@ importers:
 
   packages/ai-isolate-node:
     dependencies:
-      '@tanstack/ai-code-mode':
+      '@tanstack/ai-isolate':
         specifier: workspace:^
-        version: link:../ai-code-mode
+        version: link:../ai-isolate
       isolated-vm:
         specifier: ^7.0.2
         version: 7.0.2
@@ -3005,9 +3017,9 @@ importers:
 
   packages/ai-isolate-quickjs:
     dependencies:
-      '@tanstack/ai-code-mode':
+      '@tanstack/ai-isolate':
         specifier: workspace:^
-        version: link:../ai-code-mode
+        version: link:../ai-isolate
       quickjs-emscripten:
         specifier: ^0.31.0
         version: 0.31.0
@@ -3018,9 +3030,9 @@ importers:
 
   packages/ai-isolate-quickjs-bun:
     dependencies:
-      '@tanstack/ai-code-mode':
+      '@tanstack/ai-isolate':
         specifier: workspace:^
-        version: link:../ai-code-mode
+        version: link:../ai-isolate
       quickjs-bun:
         specifier: 0.1.2
         version: 0.1.2
