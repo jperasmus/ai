@@ -1,5 +1,23 @@
 # @tanstack/ai-bedrock
 
+## 1.4.0
+
+### Minor Changes
+
+- [#2123](https://github.com/TanStack/ai/pull/2123) [`0c0c86d`](https://github.com/TanStack/ai/commit/0c0c86d179ce839c1e581c70cb28c83ca9ab0e93) - Add `modelOptions.requestMetadata` for invocation log metadata and `modelOptions.serviceTier` to choose an inference tier. Both work with Converse and ConverseStream, including structured output.
+
+### Patch Changes
+
+- Updated dependencies [[`1888233`](https://github.com/TanStack/ai/commit/1888233ddb501d14b17aa9a5f3497373a0e9242e)]:
+  - @tanstack/ai@1.4.1
+  - @tanstack/openai-base@1.0.4
+
+## 1.3.0
+
+### Minor Changes
+
+- [#2125](https://github.com/TanStack/ai/pull/2125) [`9bd6d7b`](https://github.com/TanStack/ai/commit/9bd6d7b803453b1c0f4d24728ccee31a920dcf2e) - Add `bedrockRerank()` for Amazon Rerank and Cohere Rerank models through the Bedrock Rerank API. Supports the existing `rerank()` activity with pagination and cancellation. Uses AWS credentials (SigV4), not Bedrock API keys.
+
 ## 1.2.1
 
 ### Patch Changes
