@@ -64,6 +64,6 @@
     "@tanstack/ai-isolate": "workspace:^"
   },
   "devDependencies": {
-    "@vitest/coverage-v8": "4.1.10"
+    "@vitest/coverage-v8": "4.1.12"
   }
 }
