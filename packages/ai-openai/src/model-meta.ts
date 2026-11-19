@@ -2703,7 +2703,171 @@ const GPT_6_1_TERRA_PRO = {
     OpenAIMetadataOptions
 >
 
+const GPT_6_2_ASTRA = {
+  name: 'gpt-6.2-astra',
+  context_window: 1_050_000,
+  max_output_tokens: 128_000,
+  supports: {
+    input: ['image', 'text'],
+    output: ['text'],
+    endpoints: ['chat', 'chat-completions'],
+    features: ['streaming', 'function_calling', 'structured_outputs'],
+    tools: [
+      'web_search',
+      'web_search_preview',
+      'file_search',
+      'image_generation',
+      'code_interpreter',
+      'mcp',
+      'computer_use',
+      'computer',
+      'local_shell',
+      'shell',
+      'apply_patch',
+    ],
+  },
+  pricing: {
+    input: {
+      normal: 8,
+      cached: 0.4,
+    },
+    output: {
+      normal: 40,
+    },
+  },
+} as const satisfies ModelMeta<
+  OpenAIBaseOptions &
+    OpenAIStructuredOutputOptions &
+    OpenAIToolsOptions &
+    OpenAIStreamingOptions &
+    OpenAIMetadataOptions
+>
+
+const GPT_6_2_ASTRA_PRO = {
+  name: 'gpt-6.2-astra-pro',
+  context_window: 1_050_000,
+  max_output_tokens: 128_000,
+  supports: {
+    input: ['image', 'text'],
+    output: ['text'],
+    endpoints: ['chat', 'chat-completions'],
+    features: ['streaming', 'function_calling', 'structured_outputs'],
+    tools: [
+      'web_search',
+      'web_search_preview',
+      'file_search',
+      'image_generation',
+      'code_interpreter',
+      'mcp',
+      'computer_use',
+      'computer',
+      'local_shell',
+      'shell',
+      'apply_patch',
+    ],
+  },
+  pricing: {
+    input: {
+      normal: 8,
+      cached: 0.4,
+    },
+    output: {
+      normal: 40,
+    },
+  },
+} as const satisfies ModelMeta<
+  OpenAIBaseOptions &
+    OpenAIStructuredOutputOptions &
+    OpenAIToolsOptions &
+    OpenAIStreamingOptions &
+    OpenAIMetadataOptions
+>
+
+const GPT_6_2_SOL = {
+  name: 'gpt-6.2-sol',
+  context_window: 1_050_000,
+  max_output_tokens: 128_000,
+  supports: {
+    input: ['image', 'text'],
+    output: ['text'],
+    endpoints: ['chat', 'chat-completions'],
+    features: ['streaming', 'function_calling', 'structured_outputs'],
+    tools: [
+      'web_search',
+      'web_search_preview',
+      'file_search',
+      'image_generation',
+      'code_interpreter',
+      'mcp',
+      'computer_use',
+      'computer',
+      'local_shell',
+      'shell',
+      'apply_patch',
+    ],
+  },
+  pricing: {
+    input: {
+      normal: 2,
+      cached: 0.1,
+    },
+    output: {
+      normal: 10,
+    },
+  },
+} as const satisfies ModelMeta<
+  OpenAIBaseOptions &
+    OpenAIStructuredOutputOptions &
+    OpenAIToolsOptions &
+    OpenAIStreamingOptions &
+    OpenAIMetadataOptions
+>
+
+const GPT_6_2_SOL_PRO = {
+  name: 'gpt-6.2-sol-pro',
+  context_window: 1_050_000,
+  max_output_tokens: 128_000,
+  supports: {
+    input: ['image', 'text'],
+    output: ['text'],
+    endpoints: ['chat', 'chat-completions'],
+    features: ['streaming', 'function_calling', 'structured_outputs'],
+    tools: [
+      'web_search',
+      'web_search_preview',
+      'file_search',
+      'image_generation',
+      'code_interpreter',
+      'mcp',
+      'computer_use',
+      'computer',
+      'local_shell',
+      'shell',
+      'apply_patch',
+    ],
+  },
+  pricing: {
+    input: {
+      normal: 2,
+      cached: 0.1,
+    },
+    output: {
+      normal: 10,
+    },
+  },
+} as const satisfies ModelMeta<
+  OpenAIBaseOptions &
+    OpenAIStructuredOutputOptions &
+    OpenAIToolsOptions &
+    OpenAIStreamingOptions &
+    OpenAIMetadataOptions
+>
+
 export const OPENAI_CHAT_MODELS = [
+  GPT_6_2_ASTRA.name,
+  GPT_6_2_ASTRA_PRO.name,
+  GPT_6_2_SOL.name,
+  GPT_6_2_SOL_PRO.name,
   GPT_6_1_TERRA.name,
   GPT_6_1_TERRA_PRO.name,
   GPT_6_1_SOL.name,
@@ -3151,6 +3315,26 @@ export type OpenAIChatModelProviderOptionsByName = {
     OpenAIToolsOptions &
     OpenAIStreamingOptions &
     OpenAIMetadataOptions
+  [GPT_6_2_ASTRA.name]: OpenAIBaseOptions &
+    OpenAIStructuredOutputOptions &
+    OpenAIToolsOptions &
+    OpenAIStreamingOptions &
+    OpenAIMetadataOptions
+  [GPT_6_2_ASTRA_PRO.name]: OpenAIBaseOptions &
+    OpenAIStructuredOutputOptions &
+    OpenAIToolsOptions &
+    OpenAIStreamingOptions &
+    OpenAIMetadataOptions
+  [GPT_6_2_SOL.name]: OpenAIBaseOptions &
+    OpenAIStructuredOutputOptions &
+    OpenAIToolsOptions &
+    OpenAIStreamingOptions &
+    OpenAIMetadataOptions
+  [GPT_6_2_SOL_PRO.name]: OpenAIBaseOptions &
+    OpenAIStructuredOutputOptions &
+    OpenAIToolsOptions &
+    OpenAIStreamingOptions &
+    OpenAIMetadataOptions
 }
 
 /**
@@ -3211,6 +3395,10 @@ export type OpenAIChatModelToolCapabilitiesByName = {
   [GPT_6_1_SOL_PRO.name]: typeof GPT_6_1_SOL_PRO.supports.tools
   [GPT_6_1_TERRA.name]: typeof GPT_6_1_TERRA.supports.tools
   [GPT_6_1_TERRA_PRO.name]: typeof GPT_6_1_TERRA_PRO.supports.tools
+  [GPT_6_2_ASTRA.name]: typeof GPT_6_2_ASTRA.supports.tools
+  [GPT_6_2_ASTRA_PRO.name]: typeof GPT_6_2_ASTRA_PRO.supports.tools
+  [GPT_6_2_SOL.name]: typeof GPT_6_2_SOL.supports.tools
+  [GPT_6_2_SOL_PRO.name]: typeof GPT_6_2_SOL_PRO.supports.tools
 }
 
 /**
@@ -3283,6 +3471,10 @@ export type OpenAIModelInputModalitiesByName = {
   [GPT_6_1_SOL_PRO.name]: typeof GPT_6_1_SOL_PRO.supports.input
   [GPT_6_1_TERRA.name]: typeof GPT_6_1_TERRA.supports.input
   [GPT_6_1_TERRA_PRO.name]: typeof GPT_6_1_TERRA_PRO.supports.input
+  [GPT_6_2_ASTRA.name]: typeof GPT_6_2_ASTRA.supports.input
+  [GPT_6_2_ASTRA_PRO.name]: typeof GPT_6_2_ASTRA_PRO.supports.input
+  [GPT_6_2_SOL.name]: typeof GPT_6_2_SOL.supports.input
+  [GPT_6_2_SOL_PRO.name]: typeof GPT_6_2_SOL_PRO.supports.input
 }
 
 /**
@@ -3348,6 +3540,10 @@ export const OPENAI_MODEL_INPUT_MODALITIES: Readonly<
   [GPT_6_1_SOL_PRO.name]: GPT_6_1_SOL_PRO.supports.input,
   [GPT_6_1_TERRA.name]: GPT_6_1_TERRA.supports.input,
   [GPT_6_1_TERRA_PRO.name]: GPT_6_1_TERRA_PRO.supports.input,
+  [GPT_6_2_ASTRA.name]: GPT_6_2_ASTRA.supports.input,
+  [GPT_6_2_ASTRA_PRO.name]: GPT_6_2_ASTRA_PRO.supports.input,
+  [GPT_6_2_SOL.name]: GPT_6_2_SOL.supports.input,
+  [GPT_6_2_SOL_PRO.name]: GPT_6_2_SOL_PRO.supports.input,
 } satisfies OpenAIModelInputModalitiesByName
 
 // Reasoning
